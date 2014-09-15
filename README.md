@@ -1,9 +1,12 @@
 Asteroids-Reloaded
 ==================
 
-Asteroids [Reloaded] - HTML5 Canvas JavaScript game
+Asteroids [Reloaded] - HTML5 Canvas JavaScript game.
 
 Play here: http://www.kevs3d.co.uk/dev/asteroids
+
+The original and best HTML5 canvas game! :) As featured on Wired: http://www.wired.com/2010/09/play-asteroids-in-html5/
+Was originally coded against the very early HTML5 Canvas API for Safari 3 (no, really). But has been enhanced a few times since. The game has been played ~500,000 times on the original website above. Also featured on Chrome Experiments: http://www.chromeexperiments.com/detail/asteroids-game/
 
 Game uses the Canvas and Audio HTML5 APIs. Graphics are rendered in Lightwave 3D.
 
