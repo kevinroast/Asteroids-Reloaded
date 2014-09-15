@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+      <title>Asteroids [Reloaded] - HTML5 Canvas JavaScript Game by Kevin Roast</title>
+      <script>
+var a = navigator.userAgent;
+if (a.indexOf("iPhone;") != -1 || a.indexOf("iPod;") != -1 || a.indexOf("iPad;") != -1)
+{
+   window.location.href = "index-ios.html";
+}
+      </script>
+      <script src="scripts/mathlib-min.js"></script>
+      <script src="scripts/gamelib-min.js"></script>
+      <script src="scripts/asteroids-min.js"></script>
+      <script async defer src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+      <script async defer src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e4813104686cad8"></script>
+      <style type="text/css">
+body
+{
+   font-family: Segoe UI Light, Arial, Helvetica;
+   font-size: 1.1em;
+   background-color: #000;
+   color: #ddd;
+   background-image: url(images/asteroid_bg.jpg);
+   background-repeat: no-repeat;
+   margin: 0;
+}
+
+.box-shadow
+{
+   -moz-box-shadow: 3px 3px 6px #222;
+   -webkit-box-shadow: 3px 3px 6px #222;
+   box-shadow: 3px 3px 6px #222;
+}
+
+canvas
+{
+   background-color: #000;
+   border: 1px solid #888;
+}
+
+.wrapper
+{
+   padding-top: 12px;
+   text-align: center;
+}
+
+.info
+{
+   text-align: left;
+   display: inline-block;
+   vertical-align: top;
+   margin-left: 0.5em;
+}
+
+.infopanel
+{
+   max-width: 22em;
+   margin-top: 64px;
+   background-color: rgba(40,40,50,.85);
+   color: #fff;
+   line-height: 1.25em;
+   padding: 0.5em;
+}
+
+.title
+{
+   font-size: 1.75em;
+   padding-top: 6px;
+   padding-bottom: 12px;
+   text-align: center;
+   color: #fff;
+   text-shadow: 1px 1px 4px rgb(60,60,60);
+   line-height: 1em;
+}
+
+.highlight
+{
+   color: #ffff88;
+}
+
+.section
+{
+   padding-top: 0.5em;
+}
+
+.heading
+{
+   font-size: 1.2em;
+   text-shadow: 1px 1px 3px rgba(55,55,55, .5);
+}
+
+.credits-wrapper
+{
+   text-align: center;
+}
+
+.credits
+{
+   display: inline-block;
+   padding: 4px 64px;
+   margin: 8px;
+   text-align: center;
+   background-color: rgba(40,40,50,.85);
+   font-size: 0.8em;
+}
+
+P
+{
+   padding-left: 1em;
+   padding-top: 0;
+   padding-bottom: 0;
+   line-height: 1.1em;
+   margin-top: 0;
+   margin-bottom: 0.66em;
+}
+
+P.left
+{
+   padding-left: 0.5em;
+   line-height: 1.25em;
+}
+
+a, a:visited, a:active, a:hover
+{
+   color: #ddddff;
+}
+
+.results
+{
+   color: white;
+   padding-bottom: 0.25em;
+}
+
+.results-wrapper
+{
+   display: none;
+   font-size: 1.0em;
+   border: 2px solid grey;
+   background-color: rgba(48,48,48,0.75);
+   padding: 0.5em;
+   margin-top: 1em;
+   line-height: 1.25em;
+   text-align: center;
+}
+
+.button-overlay
+{
+   position: absolute;
+   right: 8em;
+}
+      </style>
+      <meta name="description" content="Asteroids - HTML5 Canvas and JavaScript game demo by Kevin Roast - an example of what can be achieved without a Flash plugin using the canvas 2D APIs" />
+   </head>
+   
+   <body style="background-color: #000000">
+      <a href="https://github.com/kevinroast"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+      <div class="button-overlay">
+         <!-- AddThis Button BEGIN -->
+         <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+         <a class="addthis_button_preferred_1"></a>
+         <a class="addthis_button_preferred_2"></a>
+         <a class="addthis_button_compact"></a>
+         <a class="addthis_counter addthis_bubble_style"></a>
+         </div>
+         <!-- AddThis Button END -->
+      </div>
+      <div class="wrapper">
+         <canvas class="box-shadow" id="canvas" width="640" height="640"></canvas>
+         <div class="info">
+            <div class="infopanel box-shadow">
+               <div class="title">Asteroids [Reloaded]</div>
+               <div class="settings">
+                  <p class="left heading">Instructions:</p>
+                  <p>Left and Right Arrows: Rotate ship</p>
+                  <p>Up Arrow: Thrust</p>
+                  <p>SPACE: Fire main weapon(s)</p>
+                  <p>Z: Fire bomb weapon (area effect, uses energy)</p>
+                  <p>Down Arrow or SHIFT: Shield (will recharge...)</p>
+                  <p class="highlight section">S: Enable or disable sound effects</p>
+                  <p class="highlight">R: Switch between Modern and Retro graphics</p>
+                  <p class="highlight">Escape: Pause the game</p>
+               </div>
+               <div id="results-wrapper" class="results-wrapper">
+                  <div class="results" id="results"></div>
+                  <div class="results"><a id="tweetlink" href="#" target="new">Tweet your high score...</a></div>
+               </div>
+               <div>
+                  <p class="left section"><a href="./index-debug.html">Asteroids DEBUG page</a></p>
+               </div>
+               <div>
+                  <p class="left"><a href="asteroids-src.zip">Download JavaScript source code</a></p>
+               </div>
+               <div>
+                  <p class="left"><a href="../index.html">HTML5 Canvas demos and experiments</a></p>
+               </div>
+               <div>
+                  <p class="left" style="font-size: 0.75em;padding-top:4px">Contact me by email: kevtoast at yahoo.com</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="credits-wrapper">
+         <div class="credits box-shadow">
+            Game by Kevin Roast - written to learn the <a href="http://www.whatwg.org/specs/web-apps/current-work/#the-canvas-element" target="new">HTML5 Canvas API</a> while reading about the concepts in <a href="http://www.amazon.co.uk/exec/obidos/ASIN/0123742978" target="new">this book on game maths</a>.<br>
+            <a href="http://twitter.com/kevinroast" target="new">Follow me on Twitter</a> - Last updated: 15th September 2014
+         </div>
+      </div>
+   </body>
+</html>

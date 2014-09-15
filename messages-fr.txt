@@ -1,0 +1,30 @@
+﻿#NOTE: file must be saved with "UTF-8" encoding
+#Example "fr" French translation
+
+title=ASTEROIDS
+please-wait=S'il vous plaît patienter ... Chargement d'images ...
+start=Appuyez sur ESPACE ou cliquez dessus pour démarrer
+author=par Kevin Roast
+instruction1=Comment jouer à...
+instruction2=Les touches fléchées pour faire pivoter, de poussée, le bouclier.
+instruction3=Décrochez le brillant des power-ups pour améliorer votre vaisseau.
+instruction4=Méfiez-vous des soucoupes ennemies!
+instruction5=Appuyez sur S pour activer ou désactiver le son.
+instruction6=Appuyez sur R pour basculer entre les graphismes modernes et rétro.
+high-score=Meilleur Score
+game-over=Jeu Complet
+new-high-score=Nouveau le meilleur score
+score=Score
+congratulations=FÉLICITATIONS!
+wave=Niveau
+hi-score=TOP
+hit-combo=COMBINÉ
+powerup-energy-boost=L'énergie Boost!
+powerup-fire-shielded=Lorsque feu blindé!
+powerup-extra-life=Un supplément de vie!
+powerup-slow-asteroids=Ralentir les astéroïdes!
+powerup-smart-bomb=Bombe intelligente!
+powerup-twin-cannons=Canons jumelles!
+powerup-spray-cannons=Canons de pulvérisation!
+powerup-rear-gun=Arrière Gun!
+powerup-side-guns=Guns secondaires!

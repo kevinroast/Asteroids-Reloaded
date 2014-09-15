@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+      <meta charset="utf-8">
+      <title>Asteroids [Reloaded] - HTML5 Canvas JavaScript Game Demo by Kevin Roast</title>
+      <script src="../canvask3d/scripts/mathlib.js"></script>
+      <script src="scripts/gamelib.js"></script>
+      <script src="scripts/asteroids_main.js"></script>
+      <script src="scripts/asteroids_player.js"></script>
+      <script src="scripts/asteroids_weapons.js"></script>
+      <script src="scripts/asteroids_enemies.js"></script>
+      <script src="scripts/asteroids_effects.js"></script>
+      <script src="scripts/asteroids_prerender.js"></script>
+      <script>
+DEBUG =
+{
+   INVINCIBLE: false,
+   FPS: false,
+   NOBACKGROUND: false,
+   AUTOFIRE: false
+};
+
+// fake for iOS - no sound yet on Mobile Safari
+var soundManager = null;
+var soundManagerLoaded = true;
+      </script>
+      <style type="text/css">
+body
+{
+   font-family: Segoe UI Light, Arial, Helvetica;
+   font-size: 1.1em;
+   background-color: #000;
+   color: #ddd;
+   background-image: url(images/asteroid_bg.jpg);
+   background-repeat: no-repeat;
+   margin: 0;
+}
+
+.box-shadow
+{
+   -moz-box-shadow: 3px 3px 6px #222;
+   -webkit-box-shadow: 3px 3px 6px #222;
+   box-shadow: 3px 3px 6px #222;
+}
+
+canvas
+{
+   background-color: #000;
+   border: 1px solid #888;
+}
+
+.wrapper
+{
+   padding-top: 12px;
+   text-align: center;
+}
+
+.info
+{
+   text-align: left;
+   display: inline-block;
+   vertical-align: top;
+   margin-left: 0.5em;
+}
+
+P
+{
+   padding-left: 1em;
+   padding-top: 0;
+   padding-bottom: 0;
+   line-height: 1.1em;
+   margin-top: 0;
+   margin-bottom: 0.66em;
+}
+
+a, a:visited, a:active, a:hover
+{
+   color: #ddddff;
+}
+
+.left-info
+{
+   color: #FFFF99;
+   font-size: 0.9em;
+   position: absolute;
+   left: 10px;
+   top: 580px;
+}
+
+.right-info
+{
+   color: #FFFF99;
+   font-size: 0.9em;
+   position: absolute;
+   right: 42px;
+   top: 580px;
+   text-shadow: 1px 1px 3px #000;
+}
+      </style>
+      <meta name="description" content="Asteroids - HTML5 Canvas and JavaScript demo by Kevin Roast - an example of what can be achieved without a Flash plugin using the canvas 2D APIs" />
+   </head>
+   
+   <body>
+      <div class="wrapper">
+         <canvas class="box-shadow" id="canvas" width="640" height="640"></canvas>
+      </div>
+      <div class="left-info">
+         Drag ← and → to rotate
+      </div>
+      <div class="right-info">
+         Drag ↑ to thrust<br>
+         Flick ↓ for shield
+      </div>
+   </body>
+</html>

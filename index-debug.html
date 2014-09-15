@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+      <title>Asteroids Reloaded - HTML5 Canvas JavaScript Game by Kevin Roast</title>
+      <script src="scripts/mathlib.js"></script>
+      <script src="scripts/gamelib.js"></script>
+      <script src="scripts/asteroids_main.js"></script>
+      <script src="scripts/asteroids_player.js"></script>
+      <script src="scripts/asteroids_weapons.js"></script>
+      <script src="scripts/asteroids_enemies.js"></script>
+      <script src="scripts/asteroids_effects.js"></script>
+      <script src="scripts/asteroids_prerender.js"></script>
+      <script>
+DEBUG =
+{
+   INVINCIBLE: false,
+   COLLISIONRADIUS: false,
+   FPS: true
+};
+      </script>
+      <style type="text/css">
+body
+{
+   font-family: Segoe UI Light, Arial, Helvetica;
+   font-size: 1.1em;
+   background-color: #000;
+   color: #ddd;
+   background-image: url(images/asteroid_bg.jpg);
+   background-repeat: no-repeat;
+   margin: 0;
+}
+
+.box-shadow
+{
+   -moz-box-shadow: 3px 3px 6px #222;
+   -webkit-box-shadow: 3px 3px 6px #222;
+   box-shadow: 3px 3px 6px #222;
+}
+
+canvas
+{
+   background-color: #000;
+   border: 1px solid #888;
+}
+
+.wrapper
+{
+   padding-top: 12px;
+   text-align: center;
+}
+
+.info
+{
+   text-align: left;
+   display: inline-block;
+   vertical-align: top;
+   margin-left: 0.5em;
+}
+
+.infopanel
+{
+   max-width: 22em;
+   margin-top: 26px;
+   background-color: rgba(40,40,50,.85);
+   color: #fff;
+   line-height: 1.25em;
+   padding: 0.5em;
+}
+
+.title
+{
+   font-size: 1.75em;
+   padding-top: 6px;
+   padding-bottom: 12px;
+   text-align: center;
+   color: #fff;
+   text-shadow: 1px 1px 4px rgb(60,60,60);
+   line-height: 1em;
+}
+
+.highlight
+{
+   color: #ffff88;
+}
+
+.section
+{
+   padding-top: 0.5em;
+}
+
+.heading
+{
+   font-size: 1.2em;
+   text-shadow: 1px 1px 3px rgba(55,55,55, .5);
+}
+
+.credits-wrapper
+{
+   text-align: center;
+}
+
+.credits
+{
+   display: inline-block;
+   padding: 4px 64px;
+   margin: 8px;
+   text-align: center;
+   background-color: rgba(40,40,50,.85);
+   font-size: 0.8em;
+}
+
+P
+{
+   padding-left: 1em;
+   padding-top: 0;
+   padding-bottom: 0;
+   line-height: 1.1em;
+   margin-top: 0;
+   margin-bottom: 0.66em;
+}
+
+P.left
+{
+   padding-left: 0.5em;
+   line-height: 1.25em;
+}
+
+a, a:visited, a:active, a:hover
+{
+   color: #ddddff;
+}
+
+.button-overlay
+{
+   position: absolute;
+   right: 1em;
+}
+      </style>
+      <meta name="description" content="Asteroids - HTML5 Canvas and JavaScript game demo by Kevin Roast - an example of what can be achieved without a Flash plugin using the canvas 2D APIs" />
+   </head>
+   
+   <body>
+      <div class="wrapper">
+         <canvas class="box-shadow" id="canvas" width="640" height="640"></canvas>
+         <div class="info">
+            <div class="infopanel box-shadow">
+               <div class="title">Asteroids [Reloaded] - DEBUG</div>
+               <div class="settings">
+                  <p class="left heading">Instructions:</p>
+                  <p>Left and Right Arrows: Rotate ship</p>
+                  <p>Up Arrow: Thrust</p>
+                  <p>SPACE: Fire main weapon(s)</p>
+                  <p>Z: Fire bomb weapon (area effect, uses energy)</p>
+                  <p>Down Arrow or SHIFT: Shield (will recharge...)</p>
+                  <p class="highlight section">S: Enable or disable sound effects</p>
+                  <p class="highlight">R: Switch between Modern and Retro graphics</p>
+                  <p class="highlight">Escape: Pause the game</p>
+                  <p class="left heading">DEBUG Keys:</p>
+                  <p>L: Skip level</p>
+                  <p>A: Add asteroid</p>
+                  <p>E: Add enemy ship</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
