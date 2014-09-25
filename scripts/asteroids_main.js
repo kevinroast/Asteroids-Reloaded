@@ -539,6 +539,8 @@ Asteroids.Colours =
       {
          switch (keyCode)
          {
+            case GameHandler.GAMEPAD + 0:
+            case GameHandler.GAMEPAD + 7:
             case GameHandler.KEY.SPACE:
             {
                if (this.imagesLoaded)
@@ -1008,7 +1010,7 @@ Asteroids.Colours =
             }
             
             case GameHandler.KEY.UP:
-            case GameHandler.GAMEPAD + 1:
+            case GameHandler.GAMEPAD + 2:
             {
                this.input.thrust = true;
                return true; break;
@@ -1016,13 +1018,14 @@ Asteroids.Colours =
             
             case GameHandler.KEY.DOWN:
             case GameHandler.KEY.SHIFT:
-            case GameHandler.GAMEPAD + 0:
+            case GameHandler.GAMEPAD + 1:
             {
                this.input.shield = true;
                return true; break;
             }
             
             case GameHandler.KEY.SPACE:
+            case GameHandler.GAMEPAD + 0:
             case GameHandler.GAMEPAD + 7:
             {
                this.input.fireA = true;
@@ -1030,7 +1033,7 @@ Asteroids.Colours =
             }
             
             case GameHandler.KEY.Z:
-            case GameHandler.GAMEPAD + 2:
+            case GameHandler.GAMEPAD + 3:
             {
                this.input.fireB = true;
                return true; break;
@@ -1120,7 +1123,7 @@ Asteroids.Colours =
             }
             
             case GameHandler.KEY.UP:
-            case GameHandler.GAMEPAD + 1:
+            case GameHandler.GAMEPAD + 2:
             {
                this.input.thrust = false;
                return true; break;
@@ -1128,13 +1131,14 @@ Asteroids.Colours =
             
             case GameHandler.KEY.DOWN:
             case GameHandler.KEY.SHIFT:
-            case GameHandler.GAMEPAD + 0:
+            case GameHandler.GAMEPAD + 1:
             {
                this.input.shield = false;
                return true; break;
             }
             
             case GameHandler.KEY.SPACE:
+            case GameHandler.GAMEPAD + 0:
             case GameHandler.GAMEPAD + 7:
             {
                this.input.fireA = false;
@@ -1142,7 +1146,7 @@ Asteroids.Colours =
             }
             
             case GameHandler.KEY.Z:
-            case GameHandler.GAMEPAD + 2:
+            case GameHandler.GAMEPAD + 3:
             {
                this.input.fireB = false;
                return true; break;
