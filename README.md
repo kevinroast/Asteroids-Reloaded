@@ -22,6 +22,10 @@ e.g. localhost:8080/Asteroids-Reloaded/index.html
 
 
 ## About
+Asteroids [Reloaded] is an updated version of the 1979 hit-game Asteroids!
+
+The original game was created for Atari. In the game, the player controls a spaceship that roams through an asteroid field todestroy as many asteroids and enemies as possible and get the highest score!
+
 The original and best HTML5 canvas game! :) As featured on Wired: http://www.wired.com/2010/09/play-asteroids-in-html5/
 Was originally coded against the very early HTML5 Canvas API for Safari 3 (no, really). But has been enhanced a few times since. The game has been played ~500,000 times on the original website above. Also featured on Chrome Experiments: http://www.chromeexperiments.com/detail/asteroids-game/
 
@@ -41,6 +45,8 @@ Asteroids [Reloaded] not only serves as a way to preserve video game history, bu
 
 
 ## Commands
+Gameplay Commands:
+
 ← →: Rotate ship
 
 ↑: Thrust
@@ -58,16 +64,25 @@ R: Switch between Modern and Retro graphics
 ESC: Pause the game
 
 DEBUG mode commands:
+
 L: Skip level
 
 A: Add asteroid
 
 E: Add enemy ship
 
+Removed commands:
+
+Hyperspace ability.
+
+
 ## Features
-1. Debug mode: https://www.kevs3d.co.uk/dev/asteroids/index-debug.html
-2. Ability to turn sound on and off.
-3. Ability to switch from original graphics to new graphics.
+1. Power  ups on the map.
+2. Bomb weapon that does AOE damage.
+3. Shield.
+4. Debug mode: https://www.kevs3d.co.uk/dev/asteroids/index-debug.html
+5. Ability to turn sound on and off.
+6. Ability to switch from original graphics to new graphics.
 
 
 ## Installation
