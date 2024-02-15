@@ -91,7 +91,7 @@ No installation necessary, you can play it on your browser!
 
 If you want to play the game locally follow these steps:
   1. find a path to download the game files to.
-  2. open command prompt on that path adn run "git clone https://github.com/kevinroast/Asteroids-Reloaded.git" (You need to have git installed in your machine for this to work).
+  2. open command prompt on that path and run "git clone https://github.com/kevinroast/Asteroids-Reloaded.git" (You need to have git installed in your machine for this to work).
   3. on the command prompt, run "npm install -g http-server".
   4. on the command prompt, cd into the downloaded folder from step 2, then run "http-server" (If you run into the "running scripts is disabled on this system" error message, open poweshell as an administrator, and then run Set-ExecutionPolicy RemoteSigned).
   5. Hold Cntrl + Click on the link that will show up.
