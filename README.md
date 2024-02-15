@@ -19,6 +19,13 @@ Play online here: http://www.kevs3d.co.uk/dev/asteroids
 
 If you want to run this code locally, run the game from within a local webserver for the sound/message file loading to work correctly.
 e.g. localhost:8080/Asteroids-Reloaded/index.html
+Steps:
+  1. find a path to download the game files to.
+  2. open command prompt on that path adn run "git clone https://github.com/kevinroast/Asteroids-Reloaded.git" (You need to have git installed in your machine for this to work).
+  3. on the command prompt, run "npm install -g http-server".
+  4. on the command prompt, cd into the downloaded folder from step 2, then run "http-server" (If you run into the "running scripts is disabled on this system" error message, open poweshell as an administrator, and then run Set-ExecutionPolicy RemoteSigned).
+  5. Hold Cntrl + Click on the link that will show up.
+  6. The game should now open on a local server through your browser. Enjoy!
 
 
 ## About
