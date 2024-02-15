@@ -25,7 +25,7 @@ e.g. localhost:8080/Asteroids-Reloaded/index.html
 ## About
 Asteroids [Reloaded] is an updated version of the 1979 hit-game Asteroids!
 
-The original game was created for Atari. In the game, the player controls a spaceship that roams through an asteroid field todestroy as many asteroids and enemies as possible and get the highest score!
+The original game was created for Atari. In the game, the player controls a spaceship that roams through an asteroid field to destroy as many asteroids and enemies as possible and get the highest score!
 
 The original and best HTML5 canvas game! :) As featured on Wired: http://www.wired.com/2010/09/play-asteroids-in-html5/
 Was originally coded against the very early HTML5 Canvas API for Safari 3 (no, really). But has been enhanced a few times since. The game has been played ~500,000 times on the original website above. Also featured on Chrome Experiments: http://www.chromeexperiments.com/detail/asteroids-game/
